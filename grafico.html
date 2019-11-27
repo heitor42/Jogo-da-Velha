@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jogo da velha</title>
+    <link rel="stylesheet" href="visual.css">
 </head>
 <body>
     <header>
@@ -13,24 +14,24 @@
     <section>
         <div>
             <!--jogo-->
-           <table border="1" id="gamebody">
+           <table border="1" id="gamebody" onclick="runnig()">
                <tr>
                    <td>
-                       <select name="casa00" id="00">
+                       <select name="case" id="00">
                            <option value=""></option>
                            <option value="X">X</option>
                            <option value="O">O</option>
                        </select>
                     </td>
                    <td>
-                       <select name="case01" id="01">
+                       <select name="case" id="01">
                            <option value=""></option>
                            <option value="X">X</option>
                            <option value="O">O</option>
                        </select>
                     </td>
                    <td>
-                       <select name="case02" id="02">
+                       <select name="case" id="02">
                             <option value=""></option>
                             <option value="X">X</option>
                             <option value="O">O</option>
@@ -39,20 +40,20 @@
                 </tr>
                <tr>
                    <td>
-                       <select name="case10" id="10">
+                       <select name="case" id="10">
                             <option value=""></option>
                             <option value="X">X</option>
                             <option value="O">O</option>
                        </select>
                     </td>
                    <td>
-                       <select name="case11" id="11">
+                       <select name="case" id="11">
                             <option value=""></option>
                             <option value="X">X</option>
                             <option value="O">O</option>
                        </select>
                     </td>
-                   <td><select name="case12" id="12">
+                   <td><select name="case" id="12">
                         <option value=""></option>
                         <option value="X">X</option>
                         <option value="O">O</option>
@@ -61,21 +62,21 @@
                 </tr>
                <tr>
                    <td>
-                       <select name="case20" id="20">
+                       <select name="case" id="20">
                             <option value=""></option>
                             <option value="X">X</option>
                             <option value="O">O</option>
                        </select>
                     </td>
                    <td>
-                       <select name="case21" id="21">
+                       <select name="case" id="21">
                             <option value=""></option>
                             <option value="X">X</option>
                             <option value="O">O</option>
                        </select>
                     </td>
                    <td>
-                       <select name="case22" id="22">
+                       <select name="case" id="22">
                             <option value=""></option>
                             <option value="X">X</option>
                             <option value="O">O</option>
@@ -83,7 +84,6 @@
                     </td>
                 </tr>
            </table>
-
         </div>
         <div>
             <!--Pontuação das partidas-->
