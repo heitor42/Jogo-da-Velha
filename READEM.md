@@ -4,7 +4,7 @@ Objetivo:
 criar um jogo da velha que verifica quem ganhou e se deu velha
 
 ## Metas
-- [] Criar interface básica
+- [X] Criar interface básica
 - [] Verifica quem ganhou
 - [] Verifica se deu velha
 - [] Verifica de quem é a vez
