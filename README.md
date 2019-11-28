@@ -6,7 +6,7 @@ Objetivo:
 ## Metas
 - [X] Criar interface básica
 - [X] Verifica quem ganhou
-- [ ] Verifica se deu velha
+- [X] Verifica se deu velha
 - [ ] Verifica de quem é a vez
 - [ ] Melhorar interface do jogo
 

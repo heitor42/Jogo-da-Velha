@@ -1,14 +1,7 @@
-//var playerX = prompt("Player X:")
-//var playerO = prompt("player O:")
 function gamematrix(){
     let gamematrix = []
-    for (l=0; l<=2; l++){
-        let linha = []
-
-        for (c=0; c<=2; c++){
-            linha.push(document.getElementById(`${l}${c}`).value)
-        }
-        gamematrix[l] = linha
+    for (i=0; i<9; i++){
+        gamematrix.push(document.getElementById(`${i}`).value)
     }
     return gamematrix
 }
@@ -16,52 +9,45 @@ function gamematrix(){
 function winner(){
     let matrix = gamematrix()
 
-    //primeiro caso (linhas e colunas)
-    for (l=0; l<3; l++){
-        if (Boolean(matrix[l][l])){  
-            if (matrix[l][0]==matrix[l][1] && matrix[l][1]==matrix[l][2]){
-                return [matrix[l][l], true]
-            }
-            if (matrix[0][l]==matrix[1][l] && matrix[0][l]==matrix[2][l]){
-                return [matrix[l][l], true]
+    for (i=0; i<=6; i+=3){
+        if (Boolean(matrix[i])){
+            if (matrix[i] == matrix[i+1] && matrix[i] == matrix[i+2]){
+                alert(`O jogador com ${matrix[i]} ganhou.`)
+                window.location.reload()
+            } 
+        } 
+    }
+
+    for (i=0; i<=3; i++){
+        if (Boolean(matrix[i])){
+            if (matrix[i]==matrix[i+3] && matrix[i]==matrix[i+6]){
+                alert(`O jogador com ${matrix[i]} ganhou.`)
+                window.location.reload()
             }
         }
     }
 
-    //segundo caso (diagonais)
-    if (Boolean(matrix[1][1])){
-        switch (true) {
-            case (matrix[1][1]==matrix[0][0] && matrix[1][1]==matrix[2][2]):
-                return [matrix[1][1], true]
-
-            case (matrix[1][1]==matrix[2][0] && matrix[1][1]==matrix[0][2]):
-                return [matrix[1][1], true]
-        }
-    }
-    return [0,false]
-}
-
-function zeraogame(){
-    for (l=0; l<=2; l++){
-        let linha = []
-
-        for (c=0; c<=2; c++){
-            let option = getElementById(`${l}${c}`)
+    if (Boolean(matrix[4])){
+        if (matrix[4]==matrix[0] && matrix[4]==matrix[8]){
+            alert(`O jogador com ${matrix[4]} ganhou.`)
+            window.location.reload()
+        } else if (matrix[4]==matrix[2] && matrix[4]==matrix[6]){
+            alert(`O jogador com ${matrix[4]} ganhou.`)
+            window.location.reload()
         }
     }
 }
 
+function DeuVelha() {
+    let matrix = gamematrix()
+    matrix.sort()
+    if (matrix[0] == matrix[1] == Boolean(matrix[2])){
+        alert("Deu Velha")
+        window.location.reload()
+    }
+}
 
 function runnig() {
-    let check = winner()
-    if (check[1]) {
-        alert(`O jogador com ${check[0]} ganhou.`)
-        //zeraogame()
-    }
+    winner()
+    DeuVelha()
 }
-
-function testa(){
-    console.log(gamematrix())
-    console.log(winner())
-}
-
