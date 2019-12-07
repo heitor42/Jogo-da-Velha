@@ -1,9 +1,23 @@
+let XO = 0
 function gamematrix(){
-    let gamematrix = []
-    for (i=0; i<9; i++){
-        gamematrix.push(document.getElementById(`${i}`).value)
+    const matrixTd = document.querySelectorAll('td')
+    const matrix = []
+    for (valor of matrixTd) {
+        matrix.push(valor.innerText)
     }
-    return gamematrix
+    return matrix
+}
+
+function choice(n) {
+    const area = document.querySelectorAll('td')
+
+    if (XO%2 == 0) {
+        area[n].textContent = 'X'
+    } else {
+        area[n].textContent = 'O'
+    }
+    XO++
+    console.log(area[n].textContent) 
 }
 
 function winner(){
@@ -32,6 +46,7 @@ function winner(){
             alerta(matrix[4])
         }
     }
+    DeuVelha()
 }
 
 function DeuVelha() {
@@ -47,20 +62,29 @@ function DeuVelha() {
         let t = document.createTextNode("Deu velha")
         p.appendChild(t)
         document.getElementById("div2").appendChild(p)
-        document.getElementById("div2").addEventListener("click", event =>{history.go(0)})
-        
+        document.getElementById("div2").addEventListener("click", event =>{history.go(0)})  
     }
 }
 
 function alerta(x) {
-    let p = document.createElement("P")
-    let t = document.createTextNode(`O jogador ${x} ganhou`)
+    const p = document.createElement("P")
+    const t = document.createTextNode(`O jogador ${x} ganhou`)
+    const div = document.querySelectorAll('div')
     p.appendChild(t)
-    document.getElementById("div2").appendChild(p)
-    document.getElementById("div2").addEventListener("click", event =>{history.go(0)})
+    div[1].appendChild(p)
+    div[1].addEventListener("click", event =>{history.go(0)})
+}
+
+function player() {
+    const whichP = document.querySelectorAll('div')
+    if (XO%2 !== 0) {
+        whichP[1].innerText = 'X'
+    } else {
+        whichP[1].innerText = 'O'
+    }
 }
 
 function runnig() {
+    player()
     winner()
-    DeuVelha()
 }

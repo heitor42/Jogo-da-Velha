@@ -7,8 +7,7 @@ Objetivo:
 - [X] Criar interface básica
 - [X] Verifica quem ganhou
 - [X] Verifica se deu velha
-- [ ] Verifica de quem é a vez
-- [ ] Melhorar interface do jogo
+- [X] Melhorar interface do jogo
 
 
 - [ ] Evoluir um pouco o projeto implementando o jogo da velha 3D
